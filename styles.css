@@ -1,44 +1,123 @@
 
-#game {
-    width: 500px;
+body {
+   font-size: 16px;
+   margin: 0px;
+   padding: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1bafdb;
+    font-family: Arial;
+}
+
+#screen-images {
+    position: fixed;
+    border: 1px solid black;
+    width: 100%;
+    height: 100%;
+}
+
+#temple-idle {
+    display: block;
+}
+
+.screen {
+    color: white;
+    padding: 20px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -100px;
     height: 200px;
+    width: 250px;
+    text-align: center;
+}
+
+button {
+    border: none;
+    appearance: none;
+    outline: none;
+    display: inline-block;
+    font-size: 1.5em;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 12px 48px 12px 48px;
+    border-radius: 4px;
+    color: #ffffff;
+    background-color: #1bafdb;
+    border: 2px solid #ffffff;
+}
+
+button:hover {
+    font-size: 1.6em;
+    background-color: #05c46b;
+}
+
+#start-screen {
+    display: block;
+}
+
+#game {
+    width: 100%;
+    height: 600px;
     border: 1px solid black;
     margin: auto;
+    display: none;
+    
 }
 
 #character {
-    width: 20px;
-    height: 50px;
-    background-color: red;
+    width: 120px;
+    height: 150px;
     position: relative;
-    top: 150px;
+    top: 450px;
+    left: 70px;
 }
 
 @keyframes jump {
-    0%{top: 150px;}
-    30%{top: 100px;}
-    70%{top: 100px;}
-    100%{top: 150px;}
+    0%{top: 450px}
+    50%{top: 200px}
+    100%{top: 450px}
 }
 
 .animate {
-    animation: jump 300ms linear;
+    animation: jump 700ms linear;
 }
 
+/* @keyframes slide {
+    from {height: 150px;}
+    to {height: 90px;}
+}
+
+.animate2 {
+    animation: slide 700ms linear;
+} */
+
 #obstacle {
-    background-color: blue;
-    width: 20px;
-    height: 20px;
+    width: 90px;
+    height: 90px;
     position: relative;
-    top: 130px;
+    top: 458px;
     left: 500px;
     animation: block 1.5s infinite linear;
 }
 
+/* #bird {
+    width: 90px;
+    height: 90px;
+    position: relative;
+    top: 350px;
+    left: 500px;
+    animation: block 2s infinite linear;
+    border: 1px solid black; 
+} */
+
 @keyframes block{
-    0%{left: 500px}
-    100%{left: -20px}
+    0%{left: 100%}
+    100%{left: -122px}
 }
+
 p{
     text-align: center;
 }
