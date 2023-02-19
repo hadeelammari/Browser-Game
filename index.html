@@ -8,16 +8,18 @@
 </head>
 <body>
     <div id="screen-images" class="screen-images">
-        <img id="temple-idle" class="temple-idle" src="assets/temple-idle.gif">
+        <!-- <img id="temple-idle" class="temple-idle" src="assets/temple-idle.gif"> -->
     </div>
     <div id="start-screen" class="screen">
         <button onclick="startGame()">Start Game</button>
     </div>
     <div id="game">
+        <div id="scoreSpan"></div>
     </div>
     <div id="game-over-screen" class="screen" style="display:none">
         <h1>Game Over</h1>
-        <button onclick="startGame">Start Game</button>
+        <div id="scoreSpan"></div>
+        <button onclick="startGame()">Start Game</button>
     </div>
 <script src="script.js"></script>
 </body>

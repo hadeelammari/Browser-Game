@@ -32,6 +32,7 @@ body {
     height: 200px;
     width: 250px;
     text-align: center;
+    border: 1px solid black;
 }
 
 button {
@@ -67,11 +68,15 @@ button:hover {
     
 }
 
+#scoreSpan {
+    border: 1px solid black;
+}
+
 #character {
     width: 120px;
     height: 150px;
     position: relative;
-    top: 450px;
+    top: 430px;
     left: 70px;
 }
 
@@ -85,33 +90,14 @@ button:hover {
     animation: jump 700ms linear;
 }
 
-/* @keyframes slide {
-    from {height: 150px;}
-    to {height: 90px;}
-}
-
-.animate2 {
-    animation: slide 700ms linear;
-} */
-
 #obstacle {
     width: 90px;
     height: 90px;
     position: relative;
-    top: 458px;
+    top: 438px;
     left: 500px;
     animation: block 1.5s infinite linear;
 }
-
-/* #bird {
-    width: 90px;
-    height: 90px;
-    position: relative;
-    top: 350px;
-    left: 500px;
-    animation: block 2s infinite linear;
-    border: 1px solid black; 
-} */
 
 @keyframes block{
     0%{left: 100%}
