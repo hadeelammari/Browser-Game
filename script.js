@@ -19,6 +19,8 @@ function counterStart() {
         count++;
         counter.innerText = count;
     }, 50)
+    let finalScore = document.querySelector(".scoreSpan");
+    finalScore.innerText = `Score: ${count}`;
 }
 
 //This function starts the game. It goes from the Start Game screen to the Game screen.
@@ -62,7 +64,6 @@ function stop() {
     this.toggleScreen('start-screen', false);
     this.toggleScreen('game',false);
     this.toggleScreen('game-over-screen', true);
-    count = 0
 }
 
 //Checks if the character touches the obstacle and if so, alerts "Game Over" and starts the game again.
@@ -76,3 +77,5 @@ let gameOver = setInterval(function() {
         obstacle.style.animation = "block 1.5s infinite linear";
     }
 }, 10);
+
+
