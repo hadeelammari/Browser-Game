@@ -64,16 +64,25 @@ button:hover {
     margin: auto;
     display: none;
     position: absolute;
-    background-image: url("assets/_Brown Fantasy Temple Desktop Wallpaper.png");
+    /* background-image: url("assets/_Brown Fantasy Temple Desktop Wallpaper.png"); */
     background-repeat: repeat;
-    background-position: 0 0;
-    background-size: auto 100%;
-    animation: animateBackground 30s linear infinite;
+    /* background-position: 0 0; */
+    /* background-size: auto 100%; */
+    /* animation: animateBackground 30s linear infinite; */
+    animation: backGroundLoop 40s infinite alternate;
 }
 
-@keyframes animateBackground {
+/* @keyframes animateBackground {
     from {background-position: 0 0;}
     to {background-position: -10000px 0;}
+} */
+
+@keyframes backGroundLoop {
+    0% {background-image: url("assets/backgrounds/temple-forest.png");}
+    25% {background-image: url("assets/backgrounds/temple-mountains.png");}
+    5% {background-image: url("assets/backgrounds/temple-desert.png");}
+    75% {background-image: url("assets/backgrounds/temple-background2.png");}
+    100% {background-image: url("assets/backgrounds/temple-background.png");}
 }
 
 #scoreSpan {
