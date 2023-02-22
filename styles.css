@@ -109,6 +109,15 @@ button:hover {
     animation: block 1.5s infinite linear;
 }
 
+#rock {
+    width: 90px;
+    height: 90px;
+    position: relative;
+    top: 438px;
+    left: 500px;
+    animation: block 1.5s infinite linear;
+}
+
 @keyframes block{
     0%{left: 100%}
     100%{left: -122px}
@@ -118,4 +127,11 @@ p {
     text-align: center;
     font-family: Arial;
     font-size: 20px;
+    animation: disappear 5s;
+    /* animation-delay: 2s; */
+}
+
+@keyframes disappear {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
 }

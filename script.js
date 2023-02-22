@@ -10,17 +10,26 @@ obstacle.src = "assets/temple-barrel.png";
 obstacle.setAttribute("id", "obstacle");
 document.getElementById("game").append(obstacle);
 
+let rock = document.createElement("img");
+rock.src = "assets/temple-rock.png";
+obstacle.setAttribute("id", "rock");
+document.getElementById("game").append(rock);
+
 //Counter/Score
 let counter = document.querySelector('#scoreSpan');
 let count = 0;
 
 function counterStart() {
-    setInterval(() => {
-        count++;
-        counter.innerText = count;
-    }, 50)
+    count++;
+    counter.innerText = count;
     let finalScore = document.querySelector(".scoreSpan");
     finalScore.innerText = `Score: ${count}`;
+}
+
+let intervalCount = setInterval(counterStart, 50)
+
+function stopCount() {
+    clearInterval(intervalCount);
 }
 
 //This function starts the game. It goes from the Start Game screen to the Game screen.
@@ -29,8 +38,7 @@ function startGame() {
     this.toggleScreen('start-screen', false);
     this.toggleScreen('game',true)
     this.toggleScreen('game-over-screen', false)
-    // this.toggleScreen('temple-idle', true)
-    // this.toggleScreen('temple-idle', false)
+    counterStart()
 }
 
 function toggleScreen(id, toggle){
@@ -73,9 +81,8 @@ let gameOver = setInterval(function() {
     if(obstacleLeft < 30 && obstacleLeft >- 30 && characterTop >= 360) {
         obstacle.style.animation = "none";
         stop()
-        clearInterval(counterStart)
+        stopCount()
+        count = 0
         obstacle.style.animation = "block 1.5s infinite linear";
     }
 }, 10);
-
-
