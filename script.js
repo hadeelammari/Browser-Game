@@ -12,12 +12,13 @@ document.getElementById("game").append(obstacle);
 
 let rock = document.createElement("img");
 rock.src = "assets/temple-rock.png";
-obstacle.setAttribute("id", "rock");
+rock.setAttribute("id", "rock");
 document.getElementById("game").append(rock);
 
 //Counter/Score
 let counter = document.querySelector('#scoreSpan');
 let count = 0;
+let intervalCount;
 
 function counterStart() {
     count++;
@@ -26,19 +27,21 @@ function counterStart() {
     finalScore.innerText = `Score: ${count}`;
 }
 
-let intervalCount = setInterval(counterStart, 50)
 
 function stopCount() {
     clearInterval(intervalCount);
+    count = 0
+    counter.innerText = count;
 }
 
 //This function starts the game. It goes from the Start Game screen to the Game screen.
 function startGame() {
-    counterStart()
+    //counterStart()
+    intervalCount = setInterval(counterStart, 100)
     this.toggleScreen('start-screen', false);
     this.toggleScreen('game',true)
     this.toggleScreen('game-over-screen', false)
-    counterStart()
+    //counterStart()
 }
 
 function toggleScreen(id, toggle){
@@ -82,7 +85,6 @@ let gameOver = setInterval(function() {
         obstacle.style.animation = "none";
         stop()
         stopCount()
-        count = 0
         obstacle.style.animation = "block 1.5s infinite linear";
     }
 }, 10);
