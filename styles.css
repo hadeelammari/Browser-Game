@@ -64,10 +64,11 @@ button:hover {
     margin: auto;
     display: none;
     position: absolute;
+    
     /* background-image: url("assets/_Brown Fantasy Temple Desktop Wallpaper.png"); */
-    background-repeat: repeat;
+    /*background-repeat: repeat;*/
     /* background-position: 0 0; */
-    /* background-size: auto 100%; */
+     background-size: 100%; 
     /* animation: animateBackground 30s linear infinite; */
     animation: backGroundLoop 40s infinite alternate;
 }
@@ -79,10 +80,10 @@ button:hover {
 
 @keyframes backGroundLoop {
     0% {background-image: url("assets/backgrounds/temple-forest.png");}
-    25% {background-image: url("assets/backgrounds/temple-mountains.png");}
-    5% {background-image: url("assets/backgrounds/temple-desert.png");}
-    75% {background-image: url("assets/backgrounds/temple-background2.png");}
-    100% {background-image: url("assets/backgrounds/temple-background.png");}
+    30% {background-image: url("assets/backgrounds/temple-mountains.png");}
+    60% {background-image: url("assets/backgrounds/temple-desert.png");}
+    100% {background-image: url("assets/backgrounds/temple-background2.png");}
+    /*100% {background-image: url("assets/backgrounds/temple-background.png");}*/
 }
 
 #scoreSpan {
@@ -110,8 +111,7 @@ button:hover {
 }
 
 #obstacle {
-    width: 90px;
-    height: 90px;
+    width: 90px;   
     position: relative;
     top: 438px;
     left: 500px;
@@ -119,12 +119,10 @@ button:hover {
 }
 
 #rock {
-    width: 90px;
-    height: 90px;
     position: relative;
     top: 438px;
-    left: 500px;
-    animation: block 1.5s infinite linear;
+    left: 1500px;
+    animation: block 1.5s infinite 0.5s linear;
 }
 
 @keyframes block{
